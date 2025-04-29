@@ -1,28 +1,24 @@
-$schema: 1.0
-name: powershell
-description: Execute a powershell command.
-author: Microsoft Corporation
-command: ".\\Run-Command.ps1 -Command {{command}} -WorkingDirectory {{workingDirectory}}"
-parameters:
-  command:
-    type: string
-    default: ""
-    required: true
-    description: The command to execute.
-  workingDirectory:
-    type: string
-    default: ""
-    required: false
-    description: The working directory to execute the command in.
-documentation:
-  notes: This task is used to execute a powershell command.
-  examples:
-    - name: powershell
-      description: print hello world
-      parameters:
-        command: "Write-Host 'hello, world!'"
-    - name: powershell
-      description: run script
-      parameters:
-        command: "./script.ps1"
-        workingDirectory: C:\\provisioning\\temp
+$schema: "1.0"
+name: "frontend-eng"
+image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
+description: "This definition is for the eShop frontend engineering environment"
+
+tasks:
+  - name: ~/winget
+    parameters:
+      downloadUrl: 'https://raw.githubusercontent.com/contoso-co/common-eng-sys/msft-git/dsc-configurations/common-config.dsc.yaml'
+
+  - name: ~/winget
+    description: Install AZD
+    parameters:
+      package:  Microsoft.Azd
+
+  - name: ~/winget
+    description: Install Visual Studio Code
+    parameters:
+      package:  Microsoft.VisualStudioCode
+
+  - name: ~/powershell
+    parameters:
+      command: |
+        $env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path','User') 
