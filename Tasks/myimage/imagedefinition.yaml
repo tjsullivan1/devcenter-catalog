@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: "tjs-eng"
-image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
+image: acgdevbox/test/0.0.1
 description: "This definition is my custom image"
 
 tasks:
