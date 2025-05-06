@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: "tjs-eng"
-image: acgdevbox/test@0.0.1
+image: acgdevbox/test@1.0.1
 description: "This definition is my custom image"
 
 tasks:
