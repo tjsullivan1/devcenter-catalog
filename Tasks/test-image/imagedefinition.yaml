@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: "frontend-eng"
-image: acg_tjs/se-win11@0_0_1
+image: acgdevbox/test@0.0.1
 description: "This definition is for the eShop frontend engineering environment"
 
 tasks:
